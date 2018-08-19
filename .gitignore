@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+/target
+*.iml
+/src/main/webapps/WEB-INF/lib/*.jar
+/src/test/java/tech/nilu/bots/InstaTest
+/src/test/java/**/*Test
+/src/main/resources/application-boot.yml
+**/*Dummy*
+*.ipr
+*.iws
+*Test.java

@@ -1,0 +1,48 @@
+server:
+  port: 7070
+web3:
+  serverAddress: http://localhost:8546
+integration:
+  bots:
+    insta:
+      username:
+      password:
+spring:
+    datasource:
+        platform: mysqldb
+        driver_class: com.mysql.jdbc.Driver
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/bots?createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password:
+        testOnBorrow: true
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 3600000
+    jpa:
+        generate-ddl: true
+    jmx:
+       default-domain: bots
+hibernate:
+     dialect: org.hibernate.dialect.MySQLDialect
+     hbm2ddl:
+        auto: update
+     ejb:
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+     show_sql: true
+     format_sql: true
+     physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+     current_session_context_class: thread
+logging:
+  level:
+    tech.nilu: INFO
+  file: /var/logs/bots.log
+endpoints:
+ jmx:
+  domain: bots
+  enabled: true
+  static-names: bots
+  unique-names: true
+security:
+ filter-order: 5
+
